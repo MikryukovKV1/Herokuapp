@@ -6,7 +6,7 @@ import static org.testng.AssertJUnit.assertTrue;
 
 public class HerokuappNotificationMessageTest extends BaseTest {
 
-    @Test
+    @Test(description = "Проверка соответствия текста")
     public void checkingText() {
         openHerokuapp("/notification_message_rendered");
         notificationMessagePage.clickLink();

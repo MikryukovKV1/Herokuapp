@@ -4,7 +4,7 @@ import org.testng.annotations.Test;
 
 public class HerokuappCheckboxesTest extends BaseTest {
 
-    @Test
+    @Test(description = "Проверить, что первый чекбокс unchecked")
     public void uncheckedOneCheckbox() {
         openHerokuapp("/checkboxes");
         assertFalse(checkboxesPage.checkedOneCheckbox());
@@ -12,7 +12,7 @@ public class HerokuappCheckboxesTest extends BaseTest {
         assertTrue(checkboxesPage.checkedOneCheckbox());
     }
 
-    @Test
+    @Test(description = "Проверить, что второй чекбокс checked")
     public void checkedTwoCheckbox() {
         openHerokuapp("/checkboxes");
         assertTrue(checkboxesPage.checkedTwoCheckbox());

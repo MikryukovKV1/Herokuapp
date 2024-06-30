@@ -6,7 +6,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class HerokuappContextMenuTest extends BaseTest {
 
-    @Test
+    @Test(description = "Валидация текста на Alert-e")
     public void checkTextAlert() {
         openHerokuapp("/context_menu");
         assertEquals(contextMenuPage.getTextAlert(), "You selected a context menu");
