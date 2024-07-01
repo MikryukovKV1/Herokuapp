@@ -16,7 +16,7 @@ public class HerokuappHoversTest extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "nameCheckData")
+    @Test(dataProvider = "nameCheckData", description = "Проверка имени профиля {numberProfile}, {numberName}, {expectedMessage}")
     public void profileNameCheck(String numberProfile, String numberName, String expectedMessage) {
         openHerokuapp("/hovers");
         hoversPage.hoveringProfile(numberProfile);
@@ -32,7 +32,8 @@ public class HerokuappHoversTest extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "checkErrorProfileData")
+    @Test(dataProvider = "checkErrorProfileData",
+            description = "Проверка что нет / есть ошибка при переходе на страницу профиля {numberProfile}, {numberName}")
     public void checkErrorProfile(String numberProfile, String numberName) {
         openHerokuapp("/hovers");
         hoversPage.hoveringProfile(numberProfile);

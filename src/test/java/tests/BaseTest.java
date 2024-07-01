@@ -24,16 +24,17 @@ public class BaseTest {
     HerokuappFramesPage framesPage;
     private final static String BASE_URL_HEROKUAPP = "http://the-internet.herokuapp.com";
 
-    @Step("Открытие браузера")
+    @Step("Открытие страницы the-internet.herokuapp.com")
     public void openHerokuapp(String url) {
         driver.get(BASE_URL_HEROKUAPP + url);
     }
 
-    @BeforeMethod(description = "setup")
+    @BeforeMethod(description = "Запуск браузера")
     public void setup() {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("start-maximized");
+        options.addArguments("headless");
         driver = new ChromeDriver(options);
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         checkboxesPage = new HerokuappCheckboxesPage(driver);

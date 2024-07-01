@@ -7,13 +7,13 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class HerokuappInputsTest extends BaseTest {
 
-    @Test
+    @Test(description = "Проверка возможности ввести значение используя Keys.ARROW_UP")
     public void inputsUpTest() {
         openHerokuapp("/inputs");
         assertEquals(inputsPage.sendKeysUpInput(), "1");
     }
 
-    @Test
+    @Test(description = "Проверка возможности ввести значение используя Keys.ARROW_DOWN")
     public void inputsDownTest() {
         openHerokuapp("/inputs");
         assertEquals(inputsPage.sendKeysDownInput(), "-1");
@@ -32,7 +32,7 @@ public class HerokuappInputsTest extends BaseTest {
         };
     }
 
-    @Test(dataProvider = "sendKeysData")
+    @Test(dataProvider = "sendKeysData", description = "Проверка возможности ввести различные цифровые значение {keys}, {expectedKeys}")
     public void inputsSendKeysTest(String keys, String expectedKeys) {
         openHerokuapp("/inputs");
         assertEquals(inputsPage.sendKeysInput(keys), expectedKeys);

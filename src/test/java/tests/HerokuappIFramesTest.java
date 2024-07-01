@@ -5,7 +5,7 @@ import static org.testng.AssertJUnit.assertEquals;
 
 public class HerokuappIFramesTest extends BaseTest {
 
-    @Test
+    @Test(description = "Проверка текста внутри параграфа")
     public void comparisonTextParagraphTest() {
         openHerokuapp("/frames");
         assertEquals(framesPage.transitionIFramesPage()
